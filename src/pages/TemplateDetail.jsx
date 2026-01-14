@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Download, Users, Calendar, ShieldCheck } from 'lucide-react';
 import { Button } from "../components/ui/button";
 import { templates } from "../data/templates";
-import ReactMarkdown from 'react-markdown'; // We might need to handle markdown manually if not installed, but let's try a simple pre-wrap for now to avoid dep hell if possible, OR just use simple rendering since we control content.
+import ReactMarkdown from 'react-markdown';
+import OrgChart from '../components/OrgChart';
 // Actually, let's just use whitespace-pre-wrap for simplicity as I didn't install react-markdown. 
 
 const TemplateDetail = () => {
@@ -39,6 +40,7 @@ const TemplateDetail = () => {
                                 if (line.startsWith('## ')) return <h2 key={index} className="text-2xl font-bold mt-8 mb-4 text-slate-800">{line.replace('## ', '')}</h2>;
                                 if (line.startsWith('### ')) return <h3 key={index} className="text-xl font-bold mt-6 mb-3 text-slate-700">{line.replace('### ', '')}</h3>;
                                 if (line.startsWith('- ')) return <li key={index} className="ml-4 mb-2 list-disc">{line.replace('- ', '')}</li>;
+                                if (line.trim() === '[[ORG_CHART]]') return <div key={index} className="w-full overflow-x-auto"><OrgChart /></div>;
                                 if (line.trim() === '') return <br key={index} />;
                                 return <p key={index} className="mb-2 leading-relaxed text-slate-600">{line}</p>;
                             })}
