@@ -395,7 +395,7 @@ export const templates = [
         categoryLabel: "建筑工程",
         description: "本模板详细规定了施工现场安全文明施工的目标、组织体系、管理职责、安全生产保证措施及各项专项技术措施，旨在确保建设工程项目的生产安全。",
         downloads: 0,
-        uploadDate: "2026-01-14",
+        uploadDate: "2024-11-21",
         editable: true,
         tags: ["安全生产", "施工方案", "组织措施"],
         image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop",
